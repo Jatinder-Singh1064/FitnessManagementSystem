@@ -1,0 +1,71 @@
+﻿@model IEnumerable<FitnessManagementSystem.Models.Gym>
+
+@{
+    ViewBag.Title = "GymDetail";
+}
+
+<h2>Gyms Available</h2>
+<h3>@ViewBag.Message</h3>
+<p>
+    @Html.ActionLink("Back to Select a Province", "FindGym", "Gyms")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GymStAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GymCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GymProvince)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GymPostal)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GymStAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GymCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GymProvince)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GymPostal)
+            </td>
+            <td>
+                @Html.ActionLink("Join Now", "Create", "Customers", routeValues: null, htmlAttributes: new { id = "loginLink" })
+            </td>
+        </tr>
+    }
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>

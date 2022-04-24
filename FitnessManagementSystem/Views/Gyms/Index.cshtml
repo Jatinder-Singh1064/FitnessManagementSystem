@@ -1,0 +1,72 @@
+﻿@model IEnumerable<FitnessManagementSystem.Models.Gym>
+
+@{
+    ViewBag.Title = "Gym Records";
+}
+
+<h2>Gym Records</h2>
+
+<p>
+    @Html.ActionLink("Add New Gym", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GymStAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GymCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GymProvince)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GymPostal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GymStAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GymCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GymProvince)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GymPostal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.GymId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.GymId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.GymId })
+        </td>
+    </tr>
+}
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>

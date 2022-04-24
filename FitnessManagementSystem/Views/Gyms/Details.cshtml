@@ -1,0 +1,50 @@
+﻿@model FitnessManagementSystem.Models.Gym
+
+@{
+    ViewBag.Title = "Gym Details";
+}
+
+<h2>Gym Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GymStAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GymStAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GymCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GymCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GymProvince)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GymProvince)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GymPostal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GymPostal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GymId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

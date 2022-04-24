@@ -1,0 +1,24 @@
+﻿@model FitnessManagementSystem.Models.Gym
+
+@{
+    ViewBag.Title = "Find Gym";
+}
+
+<h2>Find Gym</h2>
+
+@using (Html.BeginForm("GymDetail", "Gyms", FormMethod.Post))
+
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <label> Select a Province:  <span style="color:red;">*</span> </label>
+    <select name="SelectGym">
+        <option value="">Select</option>
+        <option value="ON">Ontario</option>
+        <option value="QB">Quebec</option>
+        <option value="BC">British Columbia</option>
+        <option value="NS">Nova Scotia</option>
+    </select>
+    <input id="Submit" type="submit" value="Search" />
+}
+
+
